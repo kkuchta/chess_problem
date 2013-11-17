@@ -1,3 +1,6 @@
+## Usage
+`ruby tester.rb` will run the main comparison of the two algorithms.  It checks that they find the same result (which was what I was testing in the first place).
+
 ## Background
 So, a friend of mine messaged me about an interview problem he'd been given, and he was pretty sure the only solution was brute force.  I was pretty sure there was a faster way, and I was trying to explain it to him.  It was hard to do over just chat without a whiteboard, and he had to go do something for a couple hours, so I figured I'd just implement it and prove to both of us that it worked.  That is this repo.
 
@@ -39,3 +42,12 @@ It's the same principal: calculate EVs on positions where the next moves already
 So, Backwards is linear: it requires one traversal of each square to build the EVs (O(n)), then a single run of the correct path (O(sqr(n)).  Brute Force is exponentialish.  I decided to graph it for fun:
 
 ![chart](http://i.imgur.com/636cwsP.png)
+
+You'll note that brute force goes up in an exponentialish fashion, whereas backwards appears flat.  It's actually linear, but the two diverged too quickly to make a graph that would show that.
+
+## Notes
+### Procedural Style
+This would have been way cleaner if I'd built it just a little more object oriented, (eg, had a board object with a few manipulation methods), but I wanted this to be as close to the problem statement (array of arrays) as possible.  So, the functions all take in everything they need to do their job as parameters.
+
+### General Cleanliness
+This was an hour or so of work to prove a point, not a large scale web app, so it's a little messy.

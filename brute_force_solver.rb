@@ -27,5 +27,3 @@ def find_path_brute_force( board, start_point )
   end
 end
 
-
-#puts find_path_brute_force( example, {x:0,y:0} )

@@ -15,9 +15,7 @@ def find_path_backwards( board, start_point )
     next_points_up = []
     current_points.each do |point|
 
-      #puts "Considering #{point[:x]},#{point[:y]}"
       options = get_options( point, expected_value_board )
-      #binding.pry
       options_expected_values = options.map { |option| get_value(option, expected_value_board) }
       current_expected_value = (options_expected_values.max || 0) + get_value( point, board )
 
@@ -30,8 +28,6 @@ def find_path_backwards( board, start_point )
     end
     next_points_up.uniq!
   end
-
-  #pretty_print( expected_value_board )
 
   def find_path( expected_value_board, start_point )
     options = get_options( start_point, expected_value_board )
@@ -58,5 +54,3 @@ def backwards_options( board, point )
   end
   options
 end
-
-#puts find_path_backwards( example, {x:0,y:0} )

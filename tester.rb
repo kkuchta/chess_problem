@@ -1,31 +1,16 @@
 require './backwards_solver'
 require './brute_force_solver'
 
-
-#example = [
-  #[4,2,3],
-  #[2,7,1],
-  #[3,1,4],
-  #[4,5,6]
-#]
 start = {x:0,y:0}
+num_boards = 5
+width_and_height = 9
 
-#backwards_path = find_path_backwards( example, start )
-#brute_path = find_path_brute_force( example, start )[:points]
-#puts "backwards_path=#{backwards_path}"
-#puts "brute_path=#{brute_path}"
-#puts "#{brute_path==backwards_path}"
-
-# 10 random boards
-bad_board = nil
 total_brute_time = 0
 total_backwards_time = 0
-
-num_boards = 5
-
+bad_board = nil
 (0...num_boards).each do
-  width = 11
-  height = 11
+  width = width_and_height
+  height = width_and_height
 
   board = (0..height-1).map do
     (0..width-1).map do
